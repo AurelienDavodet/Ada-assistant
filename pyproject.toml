@@ -1,0 +1,19 @@
+[project]
+name = "ada-assistant"
+version = "0.1.0"
+description = "Assistant personnel multi-agents"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "chainlit>=2.7.2",
+    "langchain-core>=0.3.75",
+    "langchain-mistralai>=0.2.11",
+    "langgraph>=0.6.6",
+    "pytest>=8.4.1",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.5",
+]
+
+[tool.setuptools]
+packages = ["ada_assistant"]
