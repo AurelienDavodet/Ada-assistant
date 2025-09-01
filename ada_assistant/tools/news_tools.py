@@ -9,7 +9,7 @@ def news_flash() -> str:
     """Renvoie les 3 actualités principales en France (via GNews API)."""
     GNEWS_API_KEY = os.getenv("GNEWS_API_KEY")
     try:
-        url = f"https://gnews.io/api/v4/top-headlines?country=fr&max=3&lang=fr&apikey={GNEWS_API_KEY}"
+        url = f"https://gnews.io/api/v4/top-headlines?country=fr&max=5&lang=fr&apikey={GNEWS_API_KEY}"
         r = requests.get(url, timeout=5)
         r.raise_for_status()
         articles = r.json().get("articles", [])

@@ -1,6 +1,7 @@
 from langchain_core.tools import tool
 
 from ada_assistant.tools.fun_tools import knowledge_fact
+from ada_assistant.tools.news_tools import news_flash
 from ada_assistant.tools.time_tools import get_date, get_time
 from ada_assistant.tools.transport_tools import ratp_traffic_lines
 from ada_assistant.tools.weather_tools import get_weather
@@ -15,6 +16,7 @@ def morning_summary() -> str:
         weather = get_weather.invoke({"city": "Paris", "period": "today"})
         traffic = ratp_traffic_lines.invoke({"lines": ["RER A", "1", "2", "6", "9"]})
         fact = knowledge_fact.invoke("")
+        news = news_flash.invoke("")
 
         return (
             f"👋 Bonjour Aurélien !\n\n"
@@ -22,6 +24,7 @@ def morning_summary() -> str:
             f"⏰ Il est {time} à Paris\n"
             f"🌦️ Météo : {weather}\n\n"
             f"🌦️ Traffic : {traffic}\n\n"
+            f"🌦️ Actualité : {news}\n\n"
             f"{fact}\n\n"
             "✨ Que cette journée soit pleine d’énergie et de bonnes surprises ! 🚀"
         )

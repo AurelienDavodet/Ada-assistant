@@ -24,3 +24,5 @@ def web_search(query: str) -> str:
         return "Je n’ai trouvé aucun résultat pertinent."
     except Exception as e:
         return f"Impossible de faire la recherche ({e})."
+
+print(web_search("who is the ?"))
